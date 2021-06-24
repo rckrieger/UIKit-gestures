@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     
     @IBAction func pinch(_ sender: Any) {
         sensedGesture.text = "pinch"
-        star.tintColor = UIColor.white
+        star.tintColor = UIColor.darkGray
     }
     @IBAction func LongHold(_ sender: Any) {
         sensedGesture.text = "long press"
