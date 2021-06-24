@@ -11,6 +11,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        star.isUserInteractionEnabled = true
         // Do any additional setup after loading the view.
     }
 
@@ -19,64 +20,46 @@ class ViewController: UIViewController {
     
     @IBAction func BasicTap(_ sender: Any) {
         sensedGesture.text = "Basic single finger tap"
-        if star.tintColor != UIColor.red {
-            star.tintColor = UIColor.blue
-        }
-        else {
-            star.tintColor = UIColor.red
-        }
+        star.tintColor = UIColor.systemBlue
     }
 
     @IBAction func DoubleTap(_ sender: Any) {
         sensedGesture.text = "Double tap"
-        if star.isAnimating {
-            star.stopAnimating()
-        }
-        else {
-            star.startAnimating()
-        }
+        star.tintColor = UIColor.purple
     }
     
     @IBAction func TwoFingerTap(_ sender: Any) {
         sensedGesture.text = "Two Finger Tap"
-        if star.backgroundColor == UIColor.white {
-            star.backgroundColor = UIColor.green
-        }
-        else {
-            star.backgroundColor = UIColor.white
-        }
+        star.tintColor = UIColor.green
     }
     
     @IBAction func rotate(_ sender: Any) {
         sensedGesture.text = "rotate"
-        star.transform = star.transform.rotated(by: .pi / 2)
+        star.tintColor = UIColor.lightGray
     }
     
     @IBAction func pinch(_ sender: Any) {
         sensedGesture.text = "pinch"
-        star.transform.scaledBy(x: -2, y: -2)
+        star.tintColor = UIColor.white
     }
     @IBAction func LongHold(_ sender: Any) {
         sensedGesture.text = "long press"
-        star.transform.scaledBy(x: 2, y: 2)
+        star.tintColor = UIColor.systemRed
     }
     
     
     @IBAction func pan(_ sender: Any) {
         sensedGesture.text = "pan"
-        star.transform.translatedBy(x: 0, y: 20)
+        star.tintColor = UIColor.yellow
     }
     
     @IBAction func edge(_ sender: Any) {
         sensedGesture.text = "Edgey"
     }
     
-    @IBAction func custom(_ sender: Any) {
-        sensedGesture.text = "Unknown"
+    @IBAction func topper(_ sender: Any) {
+        sensedGesture.text = "roof or floor edge"
     }
-    
-    
-    
     
 }
 
